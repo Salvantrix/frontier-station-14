@@ -28,7 +28,7 @@ entities:
       name: grid
     - type: Transform
       pos: -0.4893613,-0.53191274
-      parent: invalid
+      parent: 649
     - type: MapGrid
       chunks:
         0,0:
@@ -749,6 +749,18 @@ entities:
         chunkSize: 4
     - type: GasTileOverlay
     - type: RadiationGridResistance
+  - uid: 649
+    components:
+    - type: MetaData
+      name: map 451
+    - type: Transform
+    - type: Map
+    - type: PhysicsMap
+    - type: GridTree
+    - type: MovedGrids
+    - type: Broadphase
+    - type: OccluderTree
+    - type: LoadedMap
 - proto: AirAlarm
   entities:
   - uid: 848
@@ -1125,7 +1137,7 @@ entities:
       pos: -17.5,0.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -22021.814
+      secondsUntilStateChange: -22759.71
       state: Opening
   - uid: 858
     components:
@@ -1328,7 +1340,7 @@ entities:
       pos: 41.5,20.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -4610.2905
+      secondsUntilStateChange: -5348.187
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -1340,7 +1352,7 @@ entities:
       pos: 41.5,21.5
       parent: 1
     - type: Door
-      secondsUntilStateChange: -5635.4023
+      secondsUntilStateChange: -6373.299
       state: Opening
     - type: DeviceLinkSource
       lastSignals:
@@ -9939,6 +9951,9 @@ entities:
     - type: Transform
       pos: -8.5,-13.5
       parent: 1
+    - type: DeviceNetwork
+      configurators:
+      - 4697
 - proto: ComputerTelevision
   entities:
   - uid: 243
@@ -22010,6 +22025,19 @@ entities:
     - type: Transform
       pos: 19.5,6.5
       parent: 1
+- proto: NetworkConfigurator
+  entities:
+  - uid: 4697
+    components:
+    - type: Transform
+      pos: -6.8052654,-15.593255
+      parent: 1
+    - type: NetworkConfigurator
+      devices:
+        'UID: 79862': 4676
+        'UID: 76643': 2833
+        'UID: 79958': 4679
+      linkModeActive: False
 - proto: NitrogenCanister
   entities:
   - uid: 1396
@@ -25715,11 +25743,295 @@ entities:
       parent: 1
 - proto: SurveillanceCameraRouterSecurity
   entities:
+  - uid: 4676
+    components:
+    - type: Transform
+      pos: -9.5,-13.5
+      parent: 1
+    - type: DeviceNetwork
+      configurators:
+      - 4697
+- proto: SurveillanceCameraSecurity
+  entities:
   - uid: 1295
     components:
     - type: Transform
-      pos: -32.5,0.5
+      pos: 1.5,-16.5
       parent: 1
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraSecurity
+      nameSet: True
+      id: Brig
+  - uid: 4677
+    components:
+    - type: Transform
+      pos: -7.5,15.5
+      parent: 1
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraSecurity
+      nameSet: True
+      id: Perma Kitchen
+  - uid: 4678
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -0.5,-18.5
+      parent: 1
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraSecurity
+      nameSet: True
+      id: Brig Entrance
+  - uid: 4679
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -8.5,-17.5
+      parent: 1
+    - type: DeviceNetwork
+      configurators:
+      - 4697
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraSecurity
+      nameSet: True
+      id: Warden Hallway Brig Entrance
+  - uid: 4680
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 9.5,-17.5
+      parent: 1
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraSecurity
+      nameSet: True
+      id: Storage Side Brig Entrance
+  - uid: 4681
+    components:
+    - type: Transform
+      pos: 17.5,-11.5
+      parent: 1
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraSecurity
+      nameSet: True
+      id: Storage Side Storage Entrance
+  - uid: 4682
+    components:
+    - type: Transform
+      pos: -16.5,-11.5
+      parent: 1
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraSecurity
+      nameSet: True
+      id: Warden Hallway Office Entrance
+  - uid: 4683
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -14.5,17.5
+      parent: 1
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraSecurity
+      nameSet: True
+      id: Warden Hallway Public Entrance
+  - uid: 4684
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 17.5,17.5
+      parent: 1
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraSecurity
+      nameSet: True
+      id: Storage Side Public Entrance
+  - uid: 4685
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 8.5,22.5
+      parent: 1
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraSecurity
+      nameSet: True
+      id: Storage Side Forward Dock
+  - uid: 4686
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -11.5,22.5
+      parent: 1
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraSecurity
+      nameSet: True
+      id: Warden Side Forward Dock
+  - uid: 4687
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -38.5,21.5
+      parent: 1
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraSecurity
+      nameSet: True
+      id: Warden Side Docks
+  - uid: 4688
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 44.5,21.5
+      parent: 1
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraSecurity
+      nameSet: True
+      id: Storage Side Dock
+  - uid: 4689
+    components:
+    - type: Transform
+      pos: 21.5,3.5
+      parent: 1
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraSecurity
+      nameSet: True
+      id: Medical
+  - uid: 4690
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: 19.5,-5.5
+      parent: 1
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraSecurity
+      nameSet: True
+      id: Storage
+  - uid: 4691
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: 6.5,-0.5
+      parent: 1
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraSecurity
+      nameSet: True
+      id: Perma Hydroponics
+  - uid: 4692
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -4.5,4.5
+      parent: 1
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraSecurity
+      nameSet: True
+      id: Perma Center
+  - uid: 4693
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: -5.5,-5.5
+      parent: 1
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraSecurity
+      nameSet: True
+      id: Perma Den
+  - uid: 4694
+    components:
+    - type: Transform
+      rot: 1.5707963267948966 rad
+      pos: 1.5,16.5
+      parent: 1
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraSecurity
+      nameSet: True
+      id: Perma Hallway
+  - uid: 4695
+    components:
+    - type: Transform
+      pos: 4.5,15.5
+      parent: 1
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraSecurity
+      nameSet: True
+      id: Perma Bar
+  - uid: 4696
+    components:
+    - type: Transform
+      rot: 3.141592653589793 rad
+      pos: -12.5,18.5
+      parent: 1
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraSecurity
+      nameSet: True
+      id: Perma Freezer
+  - uid: 4698
+    components:
+    - type: Transform
+      pos: -28.5,2.5
+      parent: 1
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraSecurity
+      nameSet: True
+      id: Warden Office
+  - uid: 4699
+    components:
+    - type: Transform
+      pos: -21.5,-0.5
+      parent: 1
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraSecurity
+      nameSet: True
+      id: Warden Side Atmos
+  - uid: 4700
+    components:
+    - type: Transform
+      pos: 11.5,15.5
+      parent: 1
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraSecurity
+      nameSet: True
+      id: Visitation
+  - uid: 4701
+    components:
+    - type: Transform
+      pos: 20.5,-0.5
+      parent: 1
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraSecurity
+      nameSet: True
+      id: Storage Side Solars
+  - uid: 4702
+    components:
+    - type: Transform
+      rot: -1.5707963267948966 rad
+      pos: -0.5,-34.5
+      parent: 1
+    - type: SurveillanceCamera
+      setupAvailableNetworks:
+      - SurveillanceCameraSecurity
+      nameSet: True
+      id: NFSD Docks
 - proto: Table
   entities:
   - uid: 167
@@ -27058,12 +27370,6 @@ entities:
     - type: Transform
       rot: 1.5707963267948966 rad
       pos: 18.5,19.5
-      parent: 1
-  - uid: 649
-    components:
-    - type: Transform
-      rot: 3.141592653589793 rad
-      pos: -9.5,-13.5
       parent: 1
   - uid: 651
     components:
